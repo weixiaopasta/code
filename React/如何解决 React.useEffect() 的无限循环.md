@@ -93,3 +93,50 @@ setSecret(s => ({...s, countSecrets: s.countSecrets + 1}));
 
 secret现在是一个新对象，依赖关系也发生了变化。所以useEffect(..., [secret])再次调用更新状态和再次创建新的secret对象的副作用，以此类推。
 
+### 避免将对象作为依赖项
+
+
+### 总结
+useEffect(callback, deps)是在组件渲染后执行callback(副作用)的 Hook。如果不注意副作用的作用，可能会触发组件渲染的无限循环。
+
+生成无限循环的常见情况是在副作用中更新状态，没有指定任何依赖参数
+```
+useEffect(() => {
+  // Infinite loop!
+  setState(count + 1);
+});
+```
+避免无限循环的一种有效方法是正确设置依赖项：
+```
+useEffect(() => {
+  // No infinite loop
+  setState(count + 1);
+}, [whenToUpdateValue]);
+```
+另外，也可以使用 Ref，更新 Ref 不会触发重新渲染：
+```
+useEffect(() => {
+  // No infinite loop
+  countRef.current++;
+});
+```
+无限循环的另一种常见方法是使用对象作为useEffect()的依赖项，并在副作用中更新该对象(有效地创建一个新对象)
+```
+useEffect(() => {
+  // Infinite loop!
+  setObject({
+    ...object,
+    prop: 'newValue'
+  })
+}, [object]);
+```
+避免使用对象作为依赖项，只使用特定的属性(最终结果应该是一个原始值)：
+```
+useEffect(() => {
+  // No infinite loop
+  setObject({
+    ...object,
+    prop: 'newValue'
+  })
+}, [object.whenToUpdateProp]);
+```
