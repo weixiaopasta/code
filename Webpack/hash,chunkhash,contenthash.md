@@ -1,0 +1,3 @@
+hash 是为构建计算的
+chunkhash 是为chunk 计算的
+contenthash是ExtractTextPlugin中生成的特殊hash，他是根据提取内容而不是整个区块内容计算的。

@@ -77,8 +77,8 @@ const router = new VueRouter({
 
 3、获取参数方法：
 
-在组件中：  {{$route.params.color}}
-在js里： this.$route.params.color
+在组件中： ``` {{$route.params.color}}```
+在js里： ```this.$route.params.color```
 
 ### 响应路由参数的变化
  

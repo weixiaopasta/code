@@ -3,7 +3,7 @@ function CountInputChanges() {
   const [value, setValue] = useState('');
   const [count, setCount] = useState(-1);
 
- useEffect(() => setCount(count + 1));
+  useEffect(() => setCount(count + 1));
   const onChange = ({ target }) => setValue(target.value);
 
   return (
