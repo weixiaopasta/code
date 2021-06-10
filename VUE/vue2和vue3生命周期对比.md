@@ -53,7 +53,7 @@ export default {
 
 reactive 方法是用来创建一个响应式的数据对象，该API也很好地解决了Vue2通过 defineProperty 实现数据响应式的缺陷
 
-reactive 接收对象和Arr类型，普通值类型 不能够实现双向绑定
+reactive 接收对象和Arr类型，而普通值类型 不能够实现双向绑定
 
    -- Proxy 对象用于创建一个对象的代理，从而实现基本操作的拦截和自定义（如属性查找、赋值、枚举、函数调用等）
 用法
