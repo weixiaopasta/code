@@ -12,3 +12,7 @@
 
 
 ###  exec   [ɪɡˈzek]
+
+
+### TypeError: Converting circular structure to JSON 
+将循环引用的结构转换为json
