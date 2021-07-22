@@ -1,12 +1,12 @@
 1. 一个给class 组件用 
 2. 一个给function 组件使用
-1、PuerComponent
+#### 1、PuerComponent
 当组件更新时，如果组件的 props 和 state 都没发生改变， render 方法就不会触发，省去 Virtual DOM 的生成和比对过程，达到提升性能的目的
 
 总结下就是React.PureComponent是基于浅比较，所以只要属性值是引用类型，但是修改后的值变了，但是地址不变，也不会重新渲染。在深层数据结构发生变化时可以调用 forceUpdate() 来确保组件被正确地更新。也可以用 immutable 对象加速嵌套数据的比较。
 
 
-PureComponent与shouldComponentUpdate 共存
+#### PureComponent与shouldComponentUpdate 共存
 经过上面的简单介绍，其实可以知道如果 PureComponent 里有 shouldComponentUpdate 函数的话，直接使用 shouldComponentUpdate 的结果作为是否更新的依据，没有 shouldComponentUpdate 函数的话，才会去判断是不是 PureComponent ，是的话再去做 shallowEqual 浅比较。
 
 

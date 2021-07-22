@@ -1,0 +1,1 @@
+https://www.typescriptlang.org/zh/play?#code/JYOwLgpgTgZghgYwgAjgbwFDORgvkA
