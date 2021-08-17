@@ -97,7 +97,7 @@ function MyIncreaser() {
 
 问题在于setCount(count + 1)状态更新器。当按钮被点击时，React调用setCount(count + 1)3次
 
-etCount(count + 1)的第一次调用正确地将计数器更新为count + 1 = 0 + 1 = 1。但是，接下来的两次setCount(count + 1)调用也将计数设置为1，因为它们使用了过时的stale状态。
+setCount(count + 1)的第一次调用正确地将计数器更新为count + 1 = 0 + 1 = 1。但是，接下来的两次setCount(count + 1)调用也将计数设置为1，因为它们使用了过时的stale状态。
 
 #### 通过使用函数方式更新状态来解决过时的状态。我们用setCount(count => count + 1)代替setCount(count + 1)：
 
