@@ -1,3 +1,14 @@
+查看git log
+
+*已图形的方式查看log 
+--online 一行
+```
+git log --graph --online
+```
+
+<img src="./imgs/oneline.png" />
+<img src="./imgs/no-oneline.png" />
+
 git log可以显示所有提交过的版本信息，不包括已经被删除的 commit 记录和 reset 的操作
 
 git reflog是显示所有的操作记录，包括提交，回退的操作。一般用来找出操作记录中的版本号，进行回退。

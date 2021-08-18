@@ -38,7 +38,12 @@ git revert与git reset最大的不同是，git revert 仅仅是撤销某次提�
 
 3、git reset 是把HEAD向后移动了一下，而git revert是HEAD继续前进，只是新的commit的内容和要revert的内容正好相反，能够抵消要被revert的内容。
 
-附：不得不提的git的其它删除命令（类似于Linux的命令）：
+#### git reset 缺点
+
+由于reset方式HEAD指针后移，推送到远端时需要有强制更新权限或者删除分支权限
+
+
+### 附：不得不提的git的其它删除命令（类似于Linux的命令）：
 
 git rm --cached readme.txt 只从缓存区中删除readme.txt，保留物理文件
 git rm readme.txt 不但从缓存区中删除，同时删除物理文件

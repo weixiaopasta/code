@@ -1,11 +1,10 @@
-git rebase -i 来编辑提交历史
+### git rebase -i 将本地的多次提交合并为一个，以简化提交历史
+
+https://blog.csdn.net/nrsc272420199/article/details/85555911
+### git使用rebase和merge的正确姿势
 
 
+其实只要看 graph 时间轴就行，如果你的分支落后于一个分支，并且你想把这个分支的内容合并到你的分支，这时候就 rebase 领先你的那个分支，使用 merge 的场景就一个原则，必须让你的分支领先于你要合并的那个分支，并且你的分支和你要合并的那个分支必须在一条时间轴上（使用 rebase 就能让两个分支在一条时间轴上）
 
 
-如果我们已经提交并在提交日志消息中出错，我们可以执行 git commit -amend 修改前一次提交的日志消息，而不更改其快照。
-我们可以使用 -m 选项从命令行传入新消息，而不会收到打开编辑器的提示。
-
-```
-git commit --amend -m "an updated commit message"
-```
+https://zhuanlan.zhihu.com/p/34197548
