@@ -1,4 +1,4 @@
-
+### git commit -a -m "log_message" (-a是提交所有改动，-m是加入log信息) 
 
 
 如果我们已经提交并在提交日志消息中出错，我们可以执行 git commit -amend 修改前一次提交的日志消息，而不更改其快照。

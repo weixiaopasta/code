@@ -18,3 +18,5 @@
 将循环引用的结构转换为json
 
 ### overhead 开销
+
+### harmful 有害的
