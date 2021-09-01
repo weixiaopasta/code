@@ -70,6 +70,9 @@ https://lesstester.com/
 
 #### 命名参数
 
+* mixin可以通过使用它们的名称提供参数而不是位置。
+
+* 参数没有放置值的任何顺序，它们可以通过名称引用，并切可以不必采用任何特殊顺序
 ```
 .mixin(@color: black; @margin: 10px; @padding: 20px) {
   color: @color;
@@ -238,5 +241,56 @@ div {
   padding: 33px;
 }
 ```
+### 递归mixins
+```
+.for(@count) when (@count>0) {
+    .for(@count - 1);
+    height: @count * 10px;
+    
+}
+#height {
+    .for(3);
+}
 
+```
+编译后的代码
+```
+#height {
+  height: 10px;
+  height: 20px;
+  height: 30px;
+}
+```
 
+### 变量调用
+
+* 将mixin调用分配给变量，即称为变量调用，也可以将其用于映射查找
+
+```
+//Aliasing Mixins 将mixinx分配给变量称为变量调用
+#large.dark.light {
+    .colors(dark) {
+        primary: skyblue;
+        secondary: lightgray;
+    }
+    .colors(light) {
+        primary: purple;
+        secondary: pink;
+    }
+}
+#large {
+    @color1: #large.dark.light.colors(light);
+    @color2: #large.dark.light.colors(dark);
+    color: @color1[secondary];
+    background-color: @color2[primary];
+}
+
+```
+编译后的代码
+
+```
+#large {
+  color: pink;
+  background-color: skyblue;
+}
+```
