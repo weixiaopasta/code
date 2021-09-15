@@ -51,11 +51,14 @@ SVG 是一种基于 XML 语法的图像格式，全称是可缩放矢量图（Sc
 ```
 
 
-```<svg>```的width属性和height属性，指定了 SVG 图像在 HTML 元素中所占据的宽度和高度。除了相对单位，也可以采用绝对单位（单位：像素）。如果不指定这两个属性，SVG 图像默认大小是300像素（宽） x 150像素（高）。
+```<svg>```的width属性和height属性，指定了 SVG 图像在 HTML 元素中所占据的宽度和高度。除了相对单位，也可以采用绝对单位（单位：像素）。
 
 #### viewBox
 
-SVG就像是我们的显示器屏幕，viewBox就是截屏工具选中的那个框框，最终的呈现就是把框框中的截屏内容再次在显示器中全屏显示
+SVG就像是我们的显示器屏幕，viewBox就是截屏工具选中的那个框框（只不过这个框框是整个viewbox的范围，可能大于viewport的视口），最终的呈现就是把框框中的截屏内容再次在显示器中全屏显示
+
+用户坐标系统和视窗坐标系统宽高比（高比宽）相同，它会延伸或者是缩放来适应整个视窗区域
+如果你的用户坐标系宽高比不同，你可以用preserveAspectRatio属性来声明整个系统在视窗内是否可见，你也可以用它来声明在视窗中如何定位。
 
 viewBox参数
 
@@ -72,11 +75,11 @@ viewBox="x, y, width, height" // x:左上角横坐标，y:左上角纵坐标，w
 
 上面代码中，SVG 图像是100像素宽 x 100像素高，viewBox属性指定视口从(50, 50)这个点开始。所以，实际看到的是右下角的四分之一圆
 
-<img src="./imgs/circle.png" />
+<img src="./imgs/circle11.png" />
 
 注意，视口必须适配所在的空间。上面代码中，视口的大小是 50 x 50(上图蓝绿色方块部分为视口大小)，由于 SVG 图像的大小是 100 x 100，所以视口会放大去适配 SVG 图像的大小，即放大了四倍。
 
-<img src="./imgs/circle2.png">
+<img src="./imgs/circle.png">
 
 如果不指定width属性和height属性，只指定viewBox属性，则相当于只给定 SVG 图像的长宽比。这时，SVG 图像的默认大小将等于所在的 HTML 元素的大小。 示例如下：
 
@@ -107,7 +110,7 @@ viewBox="x, y, width, height" // x:左上角横坐标，y:左上角纵坐标，w
 
 
 
-SVG 的 CSS 属性与网页元素有所不同。
+SVG 的图形 CSS 属性与网页元素有所不同。
 
 ```
 fill：填充色
@@ -241,11 +244,12 @@ use标签的href属性指定所要复制的节点，x属性和y属性是<use>左
 ```
 
 <img src="./imgs/g-use.png" />
-#### defs 标签
+
+###   defs 标签
 defs 标签用于自定义形状，它内部的代码不会显示，仅供引用
 
 
-#### pattern 标签
+### pattern 标签
 
 pattern标签用于自定义一个形状，该形状可以被引用来平铺一个区域
 
@@ -395,23 +399,15 @@ embed SVG 支持资源外链 支持内部CSS 支持内部JS
 
 iframe SVG 支持资源外链 支持内部CSS 支持内部JS
 
-
-https://www.ruanyifeng.com/blog/2018/08/svg.html
-
-https://www.zhangxinxu.com/wordpress/2014/08/svg-viewport-viewbox-preserveaspectratio/
-
-
-
-
-
 #### preserveAspectRatio
-http://www.htmleaf.com/ziliaoku/qianduanjiaocheng/201506182064.html
+
+https://segmentfault.com/a/1190000015661109
 
 ```
-preserveAspectRatio 在viewbox 和viewport的宽高比不同时 默认为xMidYMin
+preserveAspectRatio 在viewbox 和viewport的宽高比不同时 默认为xMidYMid
 
 <svg width="500" height="75" viewBox="0 0 250 75"
-     preserveAspectRatio="xMidYMin"
+     preserveAspectRatio="xMidYMid"
      style="background:#000;margin-left: 10px;">
  
     <rect x="1" y="1" width="50" height="50"
