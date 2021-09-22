@@ -22,4 +22,25 @@
 ### harmful 有害的
 
 ###  a time span
-一段时间
+* 一段时间
+
+### community  社区
+
+### DynamicModule
+ * 动态模块
+### createDatabaseProviders 
+ * 创建数据库
+
+### consumer  消费者，顾客，用户
+
+### ApplicationModule 应用模块
+
+### HttpException HTTP异常
+
+### exception 例外
+
+### ExecutionContext 执行上下文
+
+### optional 可选的
+
+
