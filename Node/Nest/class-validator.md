@@ -1,3 +1,7 @@
+github:
+https://github.com/typestack/class-validator
+
+
 ### 字符串类型的判断
 
 字符串"1"，可以符合条件。数字1却不行。
