@@ -128,7 +128,56 @@ CSRF跨站点请求伪造(Cross—Site Request Forgery)，跟XSS攻击一样，�
 
 基于 DOM 的 XSS 攻击是指通过恶意脚本修改页面的 DOM 结构，是纯粹发生在客户端的攻击。DOM 型 XSS 攻击中，取出和执行恶意代码由浏览器端完成，属于前端 JavaScript 自身的安全漏洞。
 
+#### 例子：
 
+1.Case A: HTML DOM
+```
+<a href="/user/1">{{ user_name }}</a>
+```
+
+```
+<script>alert(1)</script>
+```
+result
+
+```
+<a href="/user/1"><script>alert(1)</script></a>
+```
+
+2.Case B: HTML Attribute
+```
+<img src="{{ image_url }}">
+```
+
+```
+" onerror="alert(1)
+```
+result
+```
+<img src="" onerror="alert(1)">
+```
+
+3.Case C: JavaScrip
+```
+<script>var user_data = {{ user_data|json_encode }};</script>
+```
+```
+
+{"exploit": "</script><script>alert(1);//"}
+```
+result 
+```
+<script>var user_data = {"exploit": "</script><script>alert(1);//"};</script>
+```
+
+这是一个特别的例子，大多数人觉得，对于输出在 ``<script>`` 中的内容，json_encode 一下就安全了，其实不然。在这个例子中，XSS 仍然发生了。
+
+更可怕的是，不少编辑器的代码高亮方案中甚至无法看出上面的 Result 中存在 XSS 漏洞。如 Sublime Text 下，代码高亮结果是这样的，看上去没有任何问
+
+解决方法：
+在不同上下文中，使用合适的 escape 方式
+
+不要相信 任何 来自用户的输入（不仅限于 POST Body，还包括 QueryString，甚至是 Headers）
 #### 如何防御XSS攻击？
 
 1. 对输入内容的特定字符进行编码，例如表示 html标记的 < > 等符号。

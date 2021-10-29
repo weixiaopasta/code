@@ -44,3 +44,10 @@
 ### optional 可选的
 
 
+### FYI  仅供参考
+for your information 的缩写
+
+### MAINTAINER 维护者
+maintainer
+英 [meɪnˈteɪnə] 
+

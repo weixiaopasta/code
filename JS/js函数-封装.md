@@ -20,7 +20,7 @@ console.log(randomNumber()); // 97
 /**
  * 截断字符串....
  * @param {string} 要截断的文本字符串
- * @param {number} 截断的长度
+ * @param {} 截断的长度
  */
 export const truncate = (text, num = 10) => {
   if (text.length > num) {
