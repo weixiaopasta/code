@@ -1,0 +1,29 @@
+1.git fsck --lost-found 查看悬挂的代码，结果如下：
+```
+ git fsck --lost-found
+```
+Checking object directories: 100% (256/256), done.
+dangling commit 09287784bb5a8491515e8d9ff23c716465c31d66
+dangling blob 22a84c543843f9337de0663c23ce0faee77cde88
+dangling tree 2cc4c2d86a5d074e25ac32fb9606baa032cdced3
+dangling commit 44662bf38cca463979b5273a6f60a22bf5983eed
+dangling blob 9a9cd9e0523f7e03da99d8d8bdfda25462321010
+dangling blob 9b4a0c830b9f1f4b34c23776094c583afe2ec956
+dangling blob b06ac614103f0b71f8b3d8568f9631483d72eadc
+dangling blob f746f2ca72584d73c3766ccd03788aed1fe5a967
+dangling blob 18bd17c54fdb0a1f9115f72cbad8d4b05e1d9724
+dangling blob 4a23500daf9a967661bfb42a87dcedd7c2aabd8f
+dangling commit 4e97bd4fe19dcf8c57b9cdd492c420e3d8bf184e
+dangling blob 7015bf575ec3c8cb86994c211d7c08ca638542d4
+dangling commit 84afb9ba371bf680b5412672bea77f9d4617ea80
+dangling blob abcde0e4b903eace316d4ce1cb6a03570e7cd46d
+dangling blob c59b15d768b28f61bfdf36de96475e3efa4a89c9
+dangling blob c809162ca16bb599bf7e097ec6845683ff602527
+dangling blob cc7b25c2d2c9b81036fb6dc8b55dfa43573ced7d
+dangling blob fa59ee6c6fd381fa836dabd4b4ea9cd857778a05
+dangling blob fc9df19e4d6acaa0e48f20bff20512bdbb7d7335
+
+使用 git cat-file -p [id]，[id] 为上图中的 SHA 值
+```
+git cat-file -p fa59ee6c6fd381fa836dabd4b4ea9cd857778a05
+```

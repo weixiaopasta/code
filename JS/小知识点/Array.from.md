@@ -105,7 +105,7 @@ const result = Array(length).fill(init);
 
 ```
 ##### 3.1使用对象填充数组
-
+// TODO: fill 使用同一个对象创建 
 当初始化数组的每个项都应该是一个新对象时，Array.from() 是一个更好的解决方案：
 
 ```

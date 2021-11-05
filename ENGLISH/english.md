@@ -51,3 +51,10 @@ for your information 的缩写
 maintainer
 英 [meɪnˈteɪnə] 
 
+
+#### plain object 
+   普通对象
+
+#### object-related
+对象相关的
+
