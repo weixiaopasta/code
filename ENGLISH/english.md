@@ -3,9 +3,6 @@
 
 ### truncate 截断 [trʌŋˈkeɪt]
 
-### optional 可选的 [ˈɒpʃənl]
-
-
 ### prime 质数，素数  [praɪm] 
 
 ### referer  [rɪˈfɜː(r)  引用
@@ -58,3 +55,6 @@ maintainer
 #### object-related
 对象相关的
 
+
+####  fr（fraction）
+分数-新单位

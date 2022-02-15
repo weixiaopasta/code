@@ -1,0 +1,3 @@
+homebrew，可以理解成osx的软件管理工具，粗俗点说就是mac界的qq软件助手之类的东西。所以通过brew，安装什么chrome浏览器啊、atom编辑器之类的可视化工具也是可以的哦。
+
+npm，是node.js界的程序/模块管理工具，也就是说npm只管理那些服务于JavaScript社区的程序。而且跨平台，windows和osx，以及其他unix like操作系统都可以用

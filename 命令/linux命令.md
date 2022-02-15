@@ -16,3 +16,10 @@ find: 为查找而生
 -i 在删除前需要确认
 
 rm -r  youWantToDeleteFile/directory
+
+### cd wf/logs
+
+tail -f webapp.58.com.log
+
+tail 命令可用于查看文件的内容，有一个常用的参数 -f 常用于查阅正在改变的日志文件。
+tail -f     
