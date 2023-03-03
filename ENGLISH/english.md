@@ -58,3 +58,8 @@ maintainer
 
 ####  fr（fraction）
 分数-新单位
+
+
+#### charCode
+
+字符码
